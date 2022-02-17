@@ -1,51 +1,45 @@
 /* Function for input */
-function userInput() {
-    /* Total Income */
-    const income = document.getElementById('total-income')
-    const incomeText = income.value;
-    const totalIcome = parseFloat(incomeText);
-    
-    /* Cost for Food */
-    const food = document.getElementById('food-cost');
-    const foodText = food.value;
-    const foodCost = parseFloat(foodText);
-    
-    /* Cost for rent */
-    const rent = document.getElementById('rent-cost');
-    const rentText = rent.value;
-    const rentCost = parseFloat(rentText);
 
-    /* Cost for Cloths */
-    const clothes = document.getElementById('clothes-cost');
-    const clothesText = clothes.value;
-    const clothesCost = parseFloat(clothesText);
-
-    /* Total Cost and Balance*/
-    const totalCost = foodCost + rentCost + clothesCost;
-    document.getElementById('total-expenses').innerText = totalCost;
-    const balance = totalIcome - totalCost;
-    document.getElementById('balance').innerText = balance;
-    
+function userInput(inputNumber) {
+     /* Total Income */
+    const amount = document.getElementById(inputNumber)
+    const amountText = amount.value; 
+    const totalAmount = parseFloat(amountText);
+    // amount.value = "";
+    return totalAmount
 }
 
-/* Function for save */
-function saveAmount() {
-
-    const saveInput = document.getElementById('save-amount');
-    const saveInputText = saveInput.value;
-    const save = parseFloat(saveInputText);
-
-    const totalSave =  save + totalIcome;
-
-    document.getElementById('saving-amount').innerText = totalSave;
-}
 
 /* The Function for calculate Button */
 document.getElementById('calculate').addEventListener('click', function () {
-    userInput()
+    const totalIncom = userInput('total-income');
+    const foodCost = userInput('food-cost');
+    const rentCost = userInput('rent-cost');
+    const clothesCost = userInput('clothes-cost');
+    const totalCost = foodCost + rentCost + clothesCost;
+
+    document.getElementById('total-expenses').innerText = totalCost;
+
+    const balance = totalIncom - totalCost;
+    document.getElementById('balance').innerText = balance;
 })
 
 /* The Function for save Button */
 document.getElementById('save-btn').addEventListener('click', function() {
-    saveAmount()
+    const totalIncom = userInput('total-income');
+
+    const saveInput = userInput('save-amount');
+    const totalSaveAmount = (saveInput /100) * totalIncom;
+
+    document.getElementById('saving-amount').innerText = totalSaveAmount;
+    /* Remaing balance */
+    const foodCost = userInput('food-cost');
+    const rentCost = userInput('rent-cost');
+    const clothesCost = userInput('clothes-cost');
+    
+    const totalCost = foodCost + rentCost + clothesCost;
+    const totalCostWithSave = totalCost + totalSaveAmount;
+    const remainingBalance = totalIncom - totalCostWithSave;
+
+    document.getElementById('remaining-balance').innerText = remainingBalance;
 })
