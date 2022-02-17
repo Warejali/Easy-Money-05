@@ -5,64 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>easyMoney</title>
-    <!-- TailWind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootsrup CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- My Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
-        <div>
-            <h1 class="text-5xl font-bold text-center mt-10">easy<span class="text-sky-500">Money</span></h1>
-            <div class="grid grid-cols-2 gap-10 w-5/6 m-auto my-10">
-                <div class="bg-auto bg-no-repeat bg-center" style="background-image: url(img/1.png)">
-                    
+        <div class="container">
+            <h1 class="text-center fw-bold pt-3 mt-5">easy<span class="text-success">Money</span></h1>
+            <div class="flex row m-auto g-5">
+                <div class="col-sm-6">
+                    <img class="img-fluid" src="img/1.jpeg" alt="">
                 </div>
-                <div class="bg-teal-50 py-10">
-                    <h2 class="text-2xl font-bold text-center">Income</h2>
-                    <div class="flex w-3/4 p-5 justify-end">
-                        <label class="text-xl mx-5" for="income">Income:</label>
-                        <input type="text" name="income" id="total-income">
+                <div class="form-part py-5 col-sm-6">
+                    <h2 class="text-center py-4">Income</h2>
+                    <div class="d-flex justify-content-end input-form">
+                        <label class="form-label fs-5" for="income">Income:</label>
+                        <input class="form-control" type="text" name="income" id="total-income">
                     </div>
-                    <h2 class="text-2xl font-bold text-center mt-2">Expenses</h2>
-                    <div class="flex w-3/4 p-5 justify-end">
-                        <label class="text-xl mx-5" for="food"> Food: </label>
-                        <input type="text" name="food" id="food-cost" required>
+                    <h2 class="text-2xl font-bold text-center py-2">Expenses</h2>
+                    <div class="d-flex justify-content-end input-form">
+                        <label class="form-label fs-5" for="food"> Food: </label>
+                        <input class="form-control" type="text" name="food" id="food-cost" required>
                     </div>
-                    <div class="flex w-3/4 p-5 justify-end">
-                        <label class="text-xl mx-5" for="rent"> Rent: </label>
-                        <input type="text" name="rent" id="rent-cost">
+                    <div class="d-flex justify-content-end input-form">
+                        <label class="form-label fs-5" for="rent"> Rent: </label>
+                        <input class="form-control d-flex justify-content-end" type="text" name="rent" id="rent-cost">
                     </div>
-                    <div class="flex w-3/4 p-5 justify-end">
-                        <label class="text-xl mx-5" for="clothes">Clothes:</label> 
-                        <input type="text" name="clothes" id="clothes-cost">
+                    <div class="d-flex justify-content-end input-form">
+                        <label class="form-label fs-5" for="clothes">Clothes:</label> 
+                        <input class="form-control d-flex justify-content-end" type="text" name="clothes" id="clothes-cost">
                     </div>
-                    <div class="flex justify-center">
-                        <button id="calculate" class="bg-sky-500 hover:bg-sky-600 py-3 px-10 rounded text-white text-xl font-semibold" type="button">Calculate</button>
+                    <div class="d-flex justify-content-center p-2">
+                        <button id="calculate" class="btn btn-success fs-5" type="button">Calculate</button>
                     </div>
-                    <h3 class="bg-red-100 text-center text-xl hidden a-message p-5 m-5" id="alart-message" >Please enter valid amount!!!</h3>
-                    <div id="calculation-section" class="text-xl font-semibold p-5">
-                        <h3 class="text-center py-5">Total Expenses: <span id="total-expenses">00</span></h3>
-                        <h3 class="text-center">Balance: <span id="balance">00</span></h3>
+                    <h5 class="a-message p-3 m-3 alert-danger text-center" id="alart-message" >Please enter valid amount!!!</h5>
+                    <div id="calculation-section" class="text-xl font-semibold p-2">
+                        <h5 class="text-center py-2">Total Expenses: <span id="total-expenses">00</span></h5>
+                        <h5 class="text-center">Balance: <span id="balance">00</span></h5>
                     </div>
-                    <h3 class="bg-red-100 text-center text-xl hidden a-message p-5 m-5" id="alart-message-2" >Please enter Income amount more than cost!!!</h3>
-                    <div class="flex w-3/4 m-auto py-5">
-                        <label class="text-xl mx-3" for="save">Save:</label>
-                        <input class="" type="text" name="save" id="save-amount">
-                        <p class="text-xl mx-5">%</p>
-                        <button id="save-btn" class="bg-sky-500 hover:bg-sky-600 py-1 px-5 rounded text-white text-xl font-semibold" type="button">Save</button>
+                    <h5 class="a-message p-3 m-3 alert-danger text-center" id="alart-message-2" >Please enter Income amount more than cost!!!</h5>
+                    <div class="d-flex m-auto pt-4 mx-5">
+                        <label class="form-label fs-5" for="save">Save:</label>
+                        <input class="form-control" class="" type="text" name="save" id="save-amount">
+                        <p class="px-2">%</p>
+                        <button id="save-btn" class="btn-success btn fs-5" type="button">Save</button>
                     </div>
 
-                    <h3 class="bg-red-100 text-center text-xl hidden a-message p-5 m-5" id="alart-message-3" >You have not enough money!!! !!!</h3>
+                    <h5 class="a-message p-3 m-3 alert-danger text-center" id="alart-message-3">You have not enough money!!!</h5>
 
-                    <div id="calculation-section-2" class="text-xl font-semibold p-5">
-                        <h3 class="text-center py-5">Saving Amount: <span id="saving-amount">00</span></h3>
-                        <h3 class="text-center">Remaining Balance: <span id="remaining-balance">00</span></h3>
+                    <div id="calculation-section-2" class="p-3">
+                        <h5 class="text-center py-3">Saving Amount: <span id="saving-amount">00</span></h5>
+                        <h5 class="text-center">Remaining Balance: <span id="remaining-balance">00</span></h5>
                     </div>
                 </div>     
             </div>
         </div>
     </main>
+    
+    <!-- JS for bootsrup -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- javascript external file link -->
     <script src="app.js"></script>
 </body>
