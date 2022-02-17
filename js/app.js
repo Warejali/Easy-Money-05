@@ -1,4 +1,5 @@
 
+/* Function for User Input */
 function userInput(inputNumber) {
     const amount = document.getElementById(inputNumber)
     
@@ -35,8 +36,6 @@ document.getElementById('calculate').addEventListener('click', function () {
     document.getElementById('total-expenses').innerText = totalExpenses;
     
     /* After expenses Balance */
-    
-
     if (totalIncome > totalExpenses) {
         const balance = totalIncome - totalExpenses;
         document.getElementById('balance').innerText = balance;
