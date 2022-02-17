@@ -22,31 +22,32 @@
                     <h2 class="text-2xl font-bold text-center">Income</h2>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="income">Income:</label>
-                        <input type="text" name="income" id="total-income">
+                        <input type="number" name="income" id="total-income">
                     </div>
                     <h2 class="text-2xl font-bold text-center mt-2">Expenses</h2>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="food"> Food: </label>
-                        <input type="text" name="food" id="food-cost">
+                        <input type="number" name="food" id="food-cost" required>
                     </div>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="rent"> Rent: </label>
-                        <input type="text" name="rent" id="rent-cost">
+                        <input type="number" name="rent" id="rent-cost">
                     </div>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="clothes">Clothes:</label> 
-                        <input type="text" name="clothes" id="clothes-cost">
+                        <input type="number" name="clothes" id="clothes-cost">
                     </div>
                     <div class="flex justify-center">
                         <button id="calculate" class="bg-sky-500 hover:bg-sky-600 py-3 px-10 rounded text-white text-xl font-semibold" type="button">Calculate</button>
                     </div>
-                    <div class="text-xl font-semibold p-5">
+                    <h3 class="bg-rose-50 p-5 m-5 rounded text-xl text-center hidden" id="alart-message" >Please input only numeric and positive number!!!</h3>
+                    <div id="account-section" class="text-xl font-semibold p-5">
                         <h3 class="text-center py-5">Total Expenses: <span id="total-expenses">00</span></h3>
                         <h3 class="text-center">Balance: <span id="balance">00</span></h3>
                     </div>
                     <div class="flex w-3/4 m-auto py-5">
                         <label class="text-xl mx-3" for="save">Save:</label>
-                        <input class="" type="text" name="save" id="save-amount">
+                        <input class="" type="number" name="save" id="save-amount">
                         <p class="text-xl mx-5">%</p>
                         <button id="save-btn" class="bg-sky-500 hover:bg-sky-600 py-1 px-5 rounded text-white text-xl font-semibold" type="button">Save</button>
                     </div>
