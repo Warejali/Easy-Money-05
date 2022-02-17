@@ -13,47 +13,51 @@
 <body>
     <main>
         <div>
-            <h1 class="text-5xl font-bold text-center mt-10">easy<span class="text-orange-300">Money</span></h1>
+            <h1 class="text-5xl font-bold text-center mt-10">easy<span class="text-sky-500">Money</span></h1>
             <div class="grid grid-cols-2 gap-10 w-5/6 m-auto my-10">
-                <div>
-                    <img src="img/1.png" alt="">
+                <div class="bg-auto bg-no-repeat bg-center" style="background-image: url(img/1.png)">
+                    
                 </div>
                 <div class="bg-teal-50 py-10">
                     <h2 class="text-2xl font-bold text-center">Income</h2>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="income">Income:</label>
-                        <input type="number" name="income" id="total-income">
+                        <input type="text" name="income" id="total-income">
                     </div>
                     <h2 class="text-2xl font-bold text-center mt-2">Expenses</h2>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="food"> Food: </label>
-                        <input type="number" name="food" id="food-cost" required>
+                        <input type="text" name="food" id="food-cost" required>
                     </div>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="rent"> Rent: </label>
-                        <input type="number" name="rent" id="rent-cost">
+                        <input type="text" name="rent" id="rent-cost">
                     </div>
                     <div class="flex w-3/4 p-5 justify-end">
                         <label class="text-xl mx-5" for="clothes">Clothes:</label> 
-                        <input type="number" name="clothes" id="clothes-cost">
+                        <input type="text" name="clothes" id="clothes-cost">
                     </div>
                     <div class="flex justify-center">
                         <button id="calculate" class="bg-sky-500 hover:bg-sky-600 py-3 px-10 rounded text-white text-xl font-semibold" type="button">Calculate</button>
                     </div>
-                    <h3 class="bg-rose-50 p-5 m-5 rounded text-xl text-center hidden" id="alart-message" >Please input only numeric and positive number!!!</h3>
-                    <div id="account-section" class="text-xl font-semibold p-5">
+                    <h3 class="bg-red-100 text-center text-xl hidden a-message p-5 m-5" id="alart-message" >Please enter valid amount!!!</h3>
+                    <div id="calculation-section" class="text-xl font-semibold p-5">
                         <h3 class="text-center py-5">Total Expenses: <span id="total-expenses">00</span></h3>
                         <h3 class="text-center">Balance: <span id="balance">00</span></h3>
                     </div>
+                    <h3 class="bg-red-100 text-center text-xl hidden a-message p-5 m-5" id="alart-message-2" >Please enter Income amount more than cost!!!</h3>
                     <div class="flex w-3/4 m-auto py-5">
                         <label class="text-xl mx-3" for="save">Save:</label>
-                        <input class="" type="number" name="save" id="save-amount">
+                        <input class="" type="text" name="save" id="save-amount">
                         <p class="text-xl mx-5">%</p>
                         <button id="save-btn" class="bg-sky-500 hover:bg-sky-600 py-1 px-5 rounded text-white text-xl font-semibold" type="button">Save</button>
                     </div>
-                    <div class="text-xl font-semibold p-5">
+
+                    <h3 class="bg-red-100 text-center text-xl hidden a-message p-5 m-5" id="alart-message-3" >You have not enough money!!! !!!</h3>
+
+                    <div id="calculation-section-2" class="text-xl font-semibold p-5">
                         <h3 class="text-center py-5">Saving Amount: <span id="saving-amount">00</span></h3>
-                        <h3 class="text-center">Remaining Balance: <span id="remaining-balance"></span></h3>
+                        <h3 class="text-center">Remaining Balance: <span id="remaining-balance">00</span></h3>
                     </div>
                 </div>     
             </div>
